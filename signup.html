@@ -5,6 +5,75 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script type="text/javascript">
+			function kiemtra()
+			{
+				// body...
+				var ten = document.getElementById("name");
+				var birthday = document.getElementById("date");
+				var phone = document.getElementById("numberphone");
+				var address = document.getElementById("dichi");
+				var mail = document.getElementById("txtmail");
+				var pass = document.getElementById("password");
+				var nhapmatkhau = document.getElementById("returnpassword");
+
+				if (ten.value=="")
+				{
+					alert ("Ban chua khai bao ten");
+					ten.focus();
+					return false;
+				}
+
+				if (birthday.value=="")
+				{
+					alert ("Chua nhap ngay sinh");
+					birthday.focus();
+					return false;
+				}
+
+				if (phone.value=="")
+				{
+					alert ("Chua nhap so dien thoai");
+					phone.focus();
+					return false;
+				}
+
+				if (phone.value.length<8||phone.value.length>11)
+				{
+					alert ("So dien thoai phai tu 8-12 so");
+					phone.focus();
+					return false;
+				}
+
+				if (address.value=="")
+				{
+					alert ("Chua nhap dia chi nha");
+					address.focus();
+					return false;
+				}
+
+				if (mail.value=="")
+				{
+					alert ("Chua nhap email");
+					mail.focus();
+					return false;
+				}
+
+				if (pass.value=="")
+				{
+					alert ("Chua nhap password");
+					pass.focus();
+					return false;
+				}
+
+				if (pass.value.length<6||pass.value.length>12)
+				{
+					alert ("Password phai tu 6-12 ki tu");
+					pass.focus();
+					return false;
+				}
+			}
+		</script>
 	</head>
 	<body>
 
@@ -15,6 +84,7 @@
 					
                     <nav id="nav">
 						<a href="index.html">Trang Chủ</a>
+						<a href="tour.html">Tour Du Lịch</a>
 						<a href="pictures.html">Hình Ảnh</a>
 						<a href="map.html">Liên Hệ</a>
 					</nav>
@@ -32,28 +102,28 @@
     <form>
        <div class="form-group">
                     <div>Họ và tên:</div>
-                    <input type="text" name="name" class="form-control"/>
+                    <input type="text" id="name" class="form-control"/>
                     
                     <div>Ngày sinh:</div>
-                    <input type="date" name="date" class="form-control"/>
+                    <input type="date" id="date" class="form-control"/>
                     
                     <div>Số điện thoại:</div>
-                    <input type="number" name="number" class="form-control"/>
+                    <input type="numberphone" id="numberphone" class="form-control"/>
                     
                     <div>Địa chỉ nhà:</div>
-                    <input type="text" name="name" class="form-control"/>
+                    <input type="text" id="dichi" class="form-control"/>
                     
                     <div>Email:</div>
-                    <input type="text" name="username" class="form-control"/>
+                    <input type="email" id="txtmail" class="form-control"/>
                     
                     <div>Mật khẩu:</div>
-                    <input type="password" name="password" class="form-control"/>
+                    <input type="password" id="password" class="form-control"/>
                     
                     <div>Nhập lại mật khẩu:</div>
-                    <input type="password" name="password" class="form-control"/>
+                    <input type="password" id="returnpassword" class="form-control"/>
                     
                     <div><label></label></div>
-                    <input type="submit" name="action" value="đăng kí" class="form-control"/>
+                    <input type="submit" onclick="return kiemtra()" class="form-control"/>
                 </div> 
     </form>
                 	
