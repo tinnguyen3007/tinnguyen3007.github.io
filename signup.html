@@ -12,10 +12,13 @@
 				var ten = document.getElementById("name");
 				var birthday = document.getElementById("date");
 				var phone = document.getElementById("numberphone");
+				var gioitinh = document.getElementsByTagName("sex");
 				var address = document.getElementById("dichi");
 				var mail = document.getElementById("txtmail");
 				var pass = document.getElementById("password");
-				var nhapmatkhau = document.getElementById("returnpassword");
+				var nhaplaimatkhau = document.getElementById("returnpassword");
+				var noisong = document.getElementsByTagName("noio");
+				var noiden = document.getElementsByTagName("diadiemden");
 
 				if (ten.value=="")
 				{
@@ -31,6 +34,13 @@
 					return false;
 				}
 
+				if (gioitinh.value=="")
+				{
+					alert ("Chua chon gioi tinh");
+					gioitinh.focus();
+					return false;
+				}
+
 				if (phone.value=="")
 				{
 					alert ("Chua nhap so dien thoai");
@@ -38,9 +48,16 @@
 					return false;
 				}
 
+				if (isNaN(phone.value))
+				{
+					alert ("Khong duoc nhap chu");
+					phone.focus();
+					return false;	
+				}
+
 				if (phone.value.length<8||phone.value.length>11)
 				{
-					alert ("So dien thoai phai tu 8-12 so");
+					alert ("So dien thoai phai tu 8-11 so");
 					phone.focus();
 					return false;
 				}
@@ -72,6 +89,27 @@
 					pass.focus();
 					return false;
 				}
+
+				if (nhaplaimatkhau.value=="")
+				{
+					alert ("Nhap lai mat khau");
+					nhaplaimatkhau.focus();
+					return false;
+				}
+
+				if (nhaplaimatkhau.value!=pass.value)
+				{
+					alert ("Mat khau khong giong nhau");
+					nhaplaimatkhau.focus();
+					return false;
+				}
+
+				if (noisong.value=="0")
+				{
+					alert ("Chon noi dang song");
+					noisong.focus();
+					return false;
+				}
 			}
 		</script>
 	</head>
@@ -92,7 +130,7 @@
 			</header>
 			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 
-	<!-- Banner -->
+		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
 					<h1>Khơi nguồn cảm hứng<br />
@@ -102,31 +140,48 @@
     <form>
        <div class="form-group">
                     <div>Họ và tên:</div>
-                    <input type="text" id="name" class="form-control"/>
+                    <input type="text" id="name"/>
                     
                     <div>Ngày sinh:</div>
-                    <input type="date" id="date" class="form-control"/>
+                    <input type="date" id="date"/>
+
+                    <div>
+                    	Giới tính:
+                    	<input type="radio" name="sex" value="Nam">Nam
+                    	<input type="radio" name="sex" value="Nữ">Nữ
+                    </div>
                     
                     <div>Số điện thoại:</div>
-                    <input type="numberphone" id="numberphone" class="form-control"/>
+                    <input type="numberphone" id="numberphone"/>
                     
                     <div>Địa chỉ nhà:</div>
-                    <input type="text" id="dichi" class="form-control"/>
+                    <input type="text" id="dichi"/>
                     
                     <div>Email:</div>
-                    <input type="email" id="txtmail" class="form-control"/>
+                    <input type="email" id="txtmail"/>
                     
                     <div>Mật khẩu:</div>
-                    <input type="password" id="password" class="form-control"/>
+                    <input type="password" id="password"/>
                     
                     <div>Nhập lại mật khẩu:</div>
-                    <input type="password" id="returnpassword" class="form-control"/>
+                    <input type="password" id="returnpassword"/>
+
+                    <div>Bạn đang sống ở:</div>
+                    <input type="radio" name="noio">Hồ Chí Minh<br>
+                    <input type="radio" name="noio">Hà Nội<br>
+                    <input type="radio" name="noio">Ngoại quốc<br>
+
+                    <div>Địa điểm muốn đến:</div>
+                    <input type="checkbox" name="diadiemden" value="Hạ Long">Hạ Long
+					<input type="checkbox" name="diadiemden" value="Đà Nẵng"> Đà Nẵng
+					<input type="checkbox" name="diadiemden" value="Hội An"> Hội An
+					<input type="checkbox" name="diadiemden" value="Nha Trang"> Nha Trang
+					<input type="checkbox" name="diadiemden" value="Phú Quốc"> Phú Quốc
                     
                     <div><label></label></div>
-                    <input type="submit" onclick="return kiemtra()" class="form-control"/>
-                </div> 
-    </form>
-                	
+                    <input type="submit" value="Đăng Kí" onclick="return kiemtra()" class="form-control"/>
+        </div> 
+    </form>       	
 
 		<!-- Footer -->
 			<section id="footer">

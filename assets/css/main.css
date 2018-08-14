@@ -2141,7 +2141,7 @@
 		padding: 0.75em 1em;
 	}
 
-	input[type="checkbox"],
+	/*input[type="checkbox"],
 	input[type="radio"] {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -2203,7 +2203,7 @@
 
 	input[type="radio"] + label:before {
 		border-radius: 100%;
-	}
+	}*/
 
 	::-webkit-input-placeholder {
 		opacity: 1.0;
@@ -2236,6 +2236,7 @@
 	textarea {
 		background: none;
 		border-color: #fceced;
+		width: 50%;
 	}
 
 		input[type="text"]:focus,
