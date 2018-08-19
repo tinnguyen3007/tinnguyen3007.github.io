@@ -12,34 +12,40 @@
 				var ten = document.getElementById("name");
 				var birthday = document.getElementById("date");
 				var phone = document.getElementById("numberphone");
-				var gioitinh = document.getElementsByTagName("sex");
 				var address = document.getElementById("dichi");
 				var mail = document.getElementById("txtmail");
 				var pass = document.getElementById("password");
 				var nhaplaimatkhau = document.getElementById("returnpassword");
-				var noisong = document.getElementsByTagName("noio");
 				var noiden = document.getElementsByTagName("diadiemden");
 
 				if (ten.value=="")
 				{
-					alert ("Ban chua khai bao ten");
+					alert ("Chua khai bao ten");
 					ten.focus();
 					return false;
 				}
 
 				if (birthday.value=="")
 				{
-					alert ("Chua nhap ngay sinh");
+					alert ("Nhap ngay sinh");
 					birthday.focus();
 					return false;
 				}
 
-				if (gioitinh.value=="")
-				{
-					alert ("Chua chon gioi tinh");
-					gioitinh.focus();
-					return false;
-				}
+				var gioitinh=document.getElementsByName("sex");
+    			var flag=0;
+    			for(var i=0;i<gioitinh.length;i++)
+    			{
+   			 	if(gioitinh[i].checked)
+    				{
+   						flag=1;
+    				}
+    			}
+    			if(flag==0)
+    			{
+    				alert("Chon gioi tinh");
+    				return false;  
+    			}
 
 				if (phone.value=="")
 				{
@@ -104,12 +110,29 @@
 					return false;
 				}
 
-				if (noisong.value=="0")
-				{
-					alert ("Chon noi dang song");
-					noisong.focus();
-					return false;
-				}
+				var noisong=document.getElementsByName("noio");
+    			var flag=0;
+    			for(var i=0;i<noisong.length;i++)
+    			{
+       			if(noisong[i].checked)
+       				{
+            			flag=1;
+        			}
+        		}
+        		if(flag==0)
+        		{
+          			alert("Chon noi ban dang song");
+          			return false;  
+        		}
+
+        		document.write("Họ tên khách hàng: " + ten.value + "<br>" +
+        						"Ngày sinh: " + birthday.value	+ "<br>" +
+        						"Giới tính: " + gioitinh.value + "<br>" +
+        						"Số điện thoai: " + phone.value + "<br>" +
+        						"Địa chỉ: " + address.value + "<br>" +
+        						"Email: " + mail.value + "<br>" +
+        						"Nơi sống: " + noisong.value + "<br>" +
+        						"Nơi muốn đến: " + noiden.value + "<br>");
 			}
 		</script>
 	</head>
@@ -122,7 +145,6 @@
 					
                     <nav id="nav">
 						<a href="index.html">Trang Chủ</a>
-						<a href="tour.html">Tour Du Lịch</a>
 						<a href="pictures.html">Hình Ảnh</a>
 						<a href="map.html">Liên Hệ</a>
 					</nav>
