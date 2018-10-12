@@ -3976,26 +3976,7 @@
 	width:100%;
 	margin-bottom:20px;
 }
-/*.form-control{
-    margin: 3px 0px;
-    padding: 5px;
-    border: none;
-    width: 100px;
-    border-radius: 3px;
-    box-shadow: 0 0 3px black;
-    color: black;
-    display: block;
-    outline: none;
+.menu {
+	list-style-type: none;
+	background-color: white;
 }
-.form-control:focus{
-	margin: 5px 5px;
-    box-shadow: 0 0 3px black;
-}
-.form-group{
-    margin: 7px 2px;
-}
-.dangki{
-    color: white;
-    width: 146px;
-    height: 49px;
-}*/
